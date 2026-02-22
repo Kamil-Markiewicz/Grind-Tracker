@@ -18,8 +18,12 @@
   "license": "UNLICENSED",
   "author": "Kamil Markiewicz",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^40.6.0"
   }
 }
