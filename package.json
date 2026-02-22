@@ -1,0 +1,25 @@
+{
+  "name": "grind-tracker",
+  "version": "0.1.0",
+  "description": "Cross-platform grind tracking app.",
+  "keywords": [
+    "electron",
+    "angular",
+    "cross-platform"
+  ],
+  "homepage": "https://github.com/Kamil-Markiewicz/Grind-Tracker#readme",
+  "bugs": {
+    "url": "https://github.com/Kamil-Markiewicz/Grind-Tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamil-Markiewicz/Grind-Tracker.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Kamil Markiewicz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
