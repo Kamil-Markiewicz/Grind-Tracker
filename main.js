@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 const path = require('node:path')
 
@@ -7,7 +7,7 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'Backend/preload.js')
+      preload: path.join(__dirname, 'src/Backend/preload.js')
     }
   })
 
@@ -15,6 +15,7 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+  ipcMain.handle('ping', () => 'pong')
   createWindow()
 
   app.on('activate', () => {
