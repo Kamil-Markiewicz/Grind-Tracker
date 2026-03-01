@@ -1,9 +1,14 @@
 #!/bin/bash
 
-#Install Electron
+#Install electron
 npm install electron --save-dev
 
-#Install Electron-forge
+#Install build packages
+sudo pacman -S dpkg, fakeroot, wine
+
+#Install electron-forge
 npm install --save-dev @electron-forge/cli
 npx electron-forge import
-sudo pacman -S dpkg, fakeroot
+
+#Install electron-builder
+npm install electron-builder --save-dev
