@@ -25,7 +25,7 @@
         "package": "electron-forge package",
         "make": "electron-forge make",
         "dist": "electron-builder -mlw portable --config",
-        "dist-linux": "electron-builder -l pacman --config",
+        "dist-linux": "electron-builder -l pacman -c build/electron-builder.json",
         "dist-win": "electron-builder -w portable --config",
         "dist-mac": "electron-builder -m --config"
     },

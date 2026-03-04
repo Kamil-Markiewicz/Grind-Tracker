@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, dialog, ipcMain } = require('electron')
 
 const path = require('node:path')
 
@@ -14,8 +14,23 @@ const createWindow = () => {
     win.loadFile('src/frontend/index.html')
 }
 
+async function handleFileOpen() {
+    const { canceled, filePaths } = await dialog.showOpenDialog({})
+    if (!canceled) {
+        return filePaths[0]
+    }
+}
+
+function handleSetDebug(event, debug) {
+    const webContents = event.sender
+    const win = BrowserWindow.fromWebContents(webContents)
+    win.setTitle(debug)
+}
+
 app.whenReady().then(() => {
     ipcMain.handle('ping', () => 'pong')
+    ipcMain.handle('dialog:openFile', handleFileOpen)
+    ipcMain.on('set-debug', handleSetDebug)
     createWindow()
 
     app.on('activate', () => {

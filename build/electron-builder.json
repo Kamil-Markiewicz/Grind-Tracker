@@ -1,15 +1,8 @@
 {
-    "appId": "Kamil-Markiewicz.Grind-Tracker",
+    "appId": "Kamil-Markiewicz.Grind_Tracker",
     "directories": {
-        "app": ".",
-        "output": "out",
-        "buildResources": "build-res"
+        "output": "out"
     },
-    "files": [
-        "package.json",
-        "app/**/*",
-        "node_modules"
-    ],
     "win": {
         "target": "portable"
     },
