@@ -1,0 +1,13 @@
+{
+    "appId": "Kamil-Markiewicz.Grind_Tracker",
+    "directories": {
+        "output": "out"
+    },
+    "win": {
+        "target": "portable"
+    },
+    "linux": {
+        "target": "pacman",
+        "category": "Utility"
+    }
+}
