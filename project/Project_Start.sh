@@ -13,3 +13,6 @@ npx electron-forge import
 
 #Install electron-builder
 npm install electron-builder --save-dev
+
+#Install Angular
+sudo npm install -g @angular/cli
