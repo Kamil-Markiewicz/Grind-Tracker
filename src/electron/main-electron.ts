@@ -1,9 +1,14 @@
-const { app, BrowserWindow, dialog, ipcMain } = require('electron')
+import { app, BrowserWindow, ipcMain, screen, dialog } from 'electron';
+import * as url from 'node:url';
+import * as path from 'node:path';
+import system from './system';
 
-const url = require("node:url");
-const path = require('node:path')
+let mainWindow: BrowserWindow | null = null;
+const projectRoot = path.resolve(__dirname, '../../..');
 
-const createWindow = () => {
+function createWindow(): BrowserWindow {
+    console.log('__dirname:', __dirname);
+    console.log('projectRoot:', path.resolve(__dirname, '../../../..'));
     // const win = new BrowserWindow({
     //     width: 800,
     //     height: 600,
@@ -14,17 +19,24 @@ const createWindow = () => {
 
     // win.loadFile('src/frontend/index.html')
 
+    const size = screen.getPrimaryDisplay().workAreaSize;
+
     mainWindow = new BrowserWindow({
-        width: 1280,
-        height: 720,
+        x: 0,
+        y: 0,
+        width: size.width,
+        height: size.height,
         webPreferences: {
-            //nodeIntegration: true
+            //nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js'),
         }
     })
 
+    system.addHandlers(ipcMain);
+
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, `/dist/Grind-Tracker/browser/index.html`),
+            pathname: path.join(projectRoot, `/dist/Grind-Tracker/browser/index.html`),
             protocol: "file:",
             slashes: true
         })
@@ -35,6 +47,13 @@ const createWindow = () => {
     mainWindow.on('closed', function () {
         mainWindow = null
     })
+
+    return mainWindow;
+}
+
+function debugDisplay() {
+    console.log('__dirname:', __dirname);
+    console.log('projectRoot:', path.resolve(__dirname, '../../../..'));
 }
 
 async function handleFileOpen() {
@@ -44,10 +63,12 @@ async function handleFileOpen() {
     }
 }
 
-function handleSetDebug(event, debug) {
+function handleSetDebug(event: any, debug: string) {
     const webContents = event.sender
     const win = BrowserWindow.fromWebContents(webContents)
-    win.setTitle(debug)
+    if (mainWindow) {
+        mainWindow.setTitle(debug)
+    }
 }
 
 app.whenReady().then(() => {
