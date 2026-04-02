@@ -21,8 +21,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main-ang.ts",
-            "tsConfig": "tsconfig.app.json",
+            "index": "angular/src/index.html",
+            "browser": "./angular/src/main-ang.ts",
+            "tsConfig": "./angular/tsconfig.angular.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
@@ -30,7 +31,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["angular/src/styles.scss"],
             "externalDependencies": [
               "electron"
             ]

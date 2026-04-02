@@ -23,6 +23,7 @@
         "ng-start": "ng serve",
         "ng-build": "ng build",
         "watch": "ng build --watch --configuration development",
+        "start-angular": "ng build --base-href ./angular",
         "start": "ng build --base-href ./ && tsc -p tsconfig.main.json && electron .",
         "test": "ng test",
         

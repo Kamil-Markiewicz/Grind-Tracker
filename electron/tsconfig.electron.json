@@ -1,18 +1,20 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "outDir": "./dist-electron",
-    "rootDir": ".",
+    "outDir": "./../dist/electron",
+    "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/electron/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",
-    "src/app/components/**/*.ts",
-    "src/app/services/**/*.ts"
+    //"/app/components/**/*.ts",
+    //"src/app/services/**/*.ts"
+    "../angular/**/*.ts"
   ]
 }

@@ -5,10 +5,10 @@ import system from './system';
 
 let mainWindow: BrowserWindow | null = null;
 const projectRoot = path.resolve(__dirname, '../../..');
+const indexRelPath: string = "/dist/Grind-Tracker/browser/index.html";
 
 function createWindow(): BrowserWindow {
-    console.log('__dirname:', __dirname);
-    console.log('projectRoot:', path.resolve(__dirname, '../../../..'));
+    debugDisplay();
     // const win = new BrowserWindow({
     //     width: 800,
     //     height: 600,
@@ -17,7 +17,7 @@ function createWindow(): BrowserWindow {
     //     }
     // })
 
-    // win.loadFile('src/frontend/index.html')
+    // win.loadFile(indexRelPath)
 
     const size = screen.getPrimaryDisplay().workAreaSize;
 
@@ -27,7 +27,8 @@ function createWindow(): BrowserWindow {
         width: size.width,
         height: size.height,
         webPreferences: {
-            //nodeIntegration: true,
+            nodeIntegration: false,
+            contextIsolation: true,
             preload: path.join(__dirname, 'preload.js'),
         }
     })
@@ -36,7 +37,7 @@ function createWindow(): BrowserWindow {
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(projectRoot, `/dist/Grind-Tracker/browser/index.html`),
+            pathname: path.join(projectRoot, indexRelPath),
             protocol: "file:",
             slashes: true
         })
@@ -53,7 +54,7 @@ function createWindow(): BrowserWindow {
 
 function debugDisplay() {
     console.log('__dirname:', __dirname);
-    console.log('projectRoot:', path.resolve(__dirname, '../../../..'));
+    console.log('projectRoot:', path.resolve(__dirname, '../../..'));
 }
 
 async function handleFileOpen() {
