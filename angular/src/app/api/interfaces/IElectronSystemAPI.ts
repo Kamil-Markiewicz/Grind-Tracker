@@ -1,9 +1,7 @@
 export interface IElectronSystemAPI {
-  // Core
-  restartApp(): void;
+    // Core
+    restartApp(): void;
 
-  // General Purpose
-  setTitle(title: string): Promise<void>;
+    // General Purpose
+    setDebug(title: string): Promise<string>;
 }
-
-export {}; // Forces this file to be treated as a module

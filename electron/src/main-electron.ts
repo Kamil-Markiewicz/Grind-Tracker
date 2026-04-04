@@ -62,10 +62,12 @@ async function handleFileOpen() {
     if (!canceled) {
         return filePaths[0]
     }
+    return null;
 }
 
 function handleSetDebug(event: any, debug: string) {
     const webContents = event.sender
+    console.log("Hit the handler for set debug"); //TODO cleanup
     const win = BrowserWindow.fromWebContents(webContents)
     if (mainWindow) {
         mainWindow.setTitle(debug)
@@ -75,7 +77,7 @@ function handleSetDebug(event: any, debug: string) {
 app.whenReady().then(() => {
     ipcMain.handle('ping', () => 'pong')
     ipcMain.handle('dialog:openFile', handleFileOpen)
-    ipcMain.on('set-debug', handleSetDebug)
+    ipcMain.handle('set-debug', handleSetDebug)
     createWindow()
 
     app.on('activate', () => {

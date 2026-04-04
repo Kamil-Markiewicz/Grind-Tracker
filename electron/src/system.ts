@@ -23,5 +23,3 @@ export default {
         ipcMain.handle('system:setDebug', handleSetDebug);
     },
 };
-
-export {}; // Forces TypeScript to treat this as a module
