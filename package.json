@@ -17,7 +17,7 @@
     },
     "license": "UNLICENSED",
     "author": "Kamil Markiewicz <author@domain.com>",
-    "main": "dist/electron/src//main-electron.js",
+    "main": "dist/electron/src/main-electron.js",
     "scripts": {
         "ng": "ng",
         "ng-start": "ng serve",
@@ -26,14 +26,12 @@
         "start-angular": "ng build --base-href ./angular",
         "start": "ng build --base-href ./ && tsc -p electron/tsconfig.electron.json && electron .",
         "test": "ng test",
-        
         "package": "electron-forge package",
         "make": "electron-forge make",
         "dist": "electron-builder -mlw portable --config",
         "dist-linux": "electron-builder -l pacman -c build/electron-builder.json",
         "dist-win": "electron-builder -w portable --config",
         "dist-mac": "electron-builder -m --config",
-        
         "generate-claude": "node project/generate-claude-md.cjs"
     },
     "packageManager": "npm@11.11.0",

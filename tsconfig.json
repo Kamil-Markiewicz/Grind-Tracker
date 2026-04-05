@@ -26,12 +26,11 @@
     },
     "files": [],
     "exclude": [
-    "node_modules",
-    "angular/src/electron/**/*.ts"
-  ],
+        "node_modules"
+    ],
     "references": [
         {
-            "path": "./angular/tsconfig.angular.json"
+            "path": "./angular/tsconfig.angular.json",
         },
         {
             "path": "./electron/tsconfig.electron.json"

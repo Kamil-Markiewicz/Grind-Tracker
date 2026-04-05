@@ -350,4 +350,15 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<h1>Electron renderer body.</h1>
+<p>👋</p>
+<p id="info"></p>
+
+Debug: <input [(ngModel)]="debugStatus" placeholder="Debug title" />
+<button (click)="onSetDebug()">Set</button>
+
+<!-- Opening file example -->
+<button>Open a File</button>
+File path: <strong id="filePath"></strong>
+
 <router-outlet />

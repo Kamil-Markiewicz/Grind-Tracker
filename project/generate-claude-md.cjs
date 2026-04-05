@@ -42,11 +42,13 @@ const includeContentOfFiles = [
     'electron/src/preloads/system.ts',
     'electron/src/main-electron.ts',
     'electron/src/preload.ts',
-    'electron/src/renderer.js',
+    'electron/src/renderer.ts',
     'electron/src/system.ts',
+
     'angular/src/app/api/electronAPI.ts',
     'angular/src/app/api/interfaces/IElectronSystemAPI.ts',
-    'angular/src/index.html'
+    'angular/src/app/components/index/index.html',
+    'angular/src/app/components/index/index.ts'
 ];
 
 function shouldIgnore(name) {

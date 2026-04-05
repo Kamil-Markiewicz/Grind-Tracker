@@ -8,6 +8,6 @@
   "include": ["./src/**/*.ts"],
   "exclude": [
     // "src/electron/**/*.ts",
-    "src/app/**/*.spec.ts"
+    "src/components/app/**/*.spec.ts"
 ]
 }

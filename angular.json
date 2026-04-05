@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "index": "angular/src/app/components/index/index.html",
+            "index": "angular/src/index.html",
             "browser": "./angular/src/main-ang.ts",
             "tsConfig": "./angular/tsconfig.angular.json",
             "inlineStyleLanguage": "scss",
