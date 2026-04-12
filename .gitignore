@@ -7,6 +7,18 @@
 /.angular/
 .angular/
 
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+/dist-electron
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
 # Node modules and dependency files
 /node_modules/
 /package-lock.json
@@ -26,6 +38,24 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build.log
 
 # Outputs
 /out/
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# System files
+.DS_Store
+Thumbs.db
+
+#AI Slop
+/project/claude.md

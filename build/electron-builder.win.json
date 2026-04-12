@@ -1,0 +1,6 @@
+{
+    "extends": "./electron-builder.base.json",
+    "win": {
+        "target": "portable"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "extends": "./electron-builder.base.json",
+    "mac": {
+        "target": "dmg",
+        "category": "public.app-category.utilities"
+    }
+}

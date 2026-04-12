@@ -1,0 +1,85 @@
+import { app, BrowserWindow, ipcMain, screen, dialog } from 'electron';
+import * as url from 'node:url';
+import * as path from 'node:path';
+import system from './system';
+
+let mainWindow: BrowserWindow | null = null;
+const projectRoot = path.resolve(__dirname, '../../..');
+const indexRelPath: string = "/dist/Grind-Tracker/browser/index.html";
+
+function createWindow(): BrowserWindow {
+    debugDisplay();
+    const size = screen.getPrimaryDisplay().workAreaSize;
+
+    mainWindow = new BrowserWindow({
+        x: 0,
+        y: 0,
+        width: size.width,
+        height: size.height,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true,
+            //preload: path.join(__dirname, 'preload.js'), //TODO cleanup
+        }
+    })
+
+    system.addHandlers(ipcMain);
+
+    mainWindow.loadURL(
+        url.format({
+            pathname: path.join(projectRoot, indexRelPath),
+            protocol: "file:",
+            slashes: true
+        })
+    );
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools()
+
+    mainWindow.on('closed', function () {
+        mainWindow = null
+    })
+
+    return mainWindow;
+}
+
+function debugDisplay() {
+    console.log('__dirname:', __dirname);
+    console.log('projectRoot:', path.resolve(__dirname, '../../..'));
+}
+
+async function handleFileOpen() {
+    const { canceled, filePaths } = await dialog.showOpenDialog({})
+    if (!canceled) {
+        return filePaths[0]
+    }
+    return null;
+}
+
+function handleSetDebug(event: any, debug: string) {
+    const webContents = event.sender
+    console.log("Hit the handler for set debug"); //TODO cleanup
+    const win = BrowserWindow.fromWebContents(webContents)
+    if (mainWindow) {
+        mainWindow.setTitle(debug)
+    }
+}
+
+app.whenReady().then(() => {
+    ipcMain.handle('ping', () => 'pong')
+    ipcMain.handle('dialog:openFile', handleFileOpen)
+    //ipcMain.handle('set-debug', handleSetDebug)
+    createWindow()
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow()
+        }
+    })
+})
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        console.log("Closing application.")
+        app.quit()
+    }
+})

@@ -1,0 +1,6 @@
+{
+    "extends": "build/electron-builder.linux.json",
+    "linux": {
+        "target": "pacman"
+    }
+}
