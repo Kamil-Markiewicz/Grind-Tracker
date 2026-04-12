@@ -28,26 +28,14 @@
         "test": "ng test",
         "package": "electron-forge package",
         "make": "electron-forge make",
-        "dist": "electron-builder -mlw portable --config",
-        "dist-linux": "electron-builder -l pacman -c build/electron-builder.json",
-        "dist-win": "electron-builder -w portable --config",
-        "dist-mac": "electron-builder -m --config",
+        "build": "electron-builder --config build/electron-builder.win.json --config build/electron-builder.linux.json",
+        "build:win":   "electron-builder --config build/electron-builder.win.json",
+        "build:linux": "electron-builder --config build/electron-builder.linux.json",
+        "build:linux.flatpak": "electron-builder --config build/electron-builder.linux.flatpak.json",
+        "build:mac":   "electron-builder --config build/electron-builder.mac.json",
         "generate-claude": "node project/generate-claude-md.cjs"
     },
     "packageManager": "npm@11.11.0",
-    "build": {
-        "appId": "Kamil-Markiewicz.Grind_Tracker",
-        "win": {
-            "target": [
-                "portable"
-            ]
-        },
-        "linux": {
-            "target": [
-                "pacman"
-            ]
-        }
-    },
     "devDependencies": {
         "@angular/build": "^21.2.2",
         "@angular/cli": "^21.2.2",

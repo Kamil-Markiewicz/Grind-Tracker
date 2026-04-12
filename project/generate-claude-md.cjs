@@ -39,16 +39,22 @@ const ignoreFiles = new Set([
 
 // Add any files you want included here
 const includeContentOfFiles = [
-    'electron/src/preloads/system.ts',
-    'electron/src/main-electron.ts',
-    'electron/src/preload.ts',
-    'electron/src/renderer.ts',
-    'electron/src/system.ts',
+    'tsconfig.json',
+    'package.json',
 
-    'angular/src/app/api/electronAPI.ts',
-    'angular/src/app/api/interfaces/IElectronSystemAPI.ts',
-    'angular/src/app/components/index/index.html',
-    'angular/src/app/components/index/index.ts'
+    'build/electron-builder.base.json',
+    'build/electron-builder.linux.json',
+    
+    // 'angular/src/app/api/electronAPI.ts',
+    // 'angular/src/app/api/interfaces/IElectronSystemAPI.ts',
+    // 'angular/src/app/components/index/index.html',
+    // 'angular/src/app/components/index/index.ts'
+
+        // 'electron/src/preloads/system.ts',
+    // 'electron/src/main-electron.ts',
+    // 'electron/src/preload.ts',
+    // 'electron/src/renderer.ts',
+    // 'electron/src/system.ts',
 ];
 
 function shouldIgnore(name) {
@@ -196,7 +202,6 @@ function generateClaudeMd(projectRoot) {
 }
 
 // Main execution
-//TODOconst projectRoot = process.argv[2] || process.cwd();
 const projectRoot = srcDir;
 
 if (!fs.existsSync(projectRoot)) {
@@ -205,7 +210,6 @@ if (!fs.existsSync(projectRoot)) {
 }
 
 const claudeMdContent = generateClaudeMd(projectRoot);
-//TODOconst outputPath = path.join(projectRoot, 'claude.md');
 const outputPath = outputFile;
 
 fs.writeFileSync(outputPath, claudeMdContent);

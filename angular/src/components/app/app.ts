@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { ElectronService } from '../../services/electronService';
 import { LoggerService } from '../../services/loggerService';
+import {Home} from '../home/home'
 
 @Component({
     selector: 'app-root',
-    imports: [FormsModule, RouterOutlet],
+    imports: [FormsModule, RouterOutlet, Home],
     templateUrl: './app.html',
     styleUrl: './app.scss',
 })

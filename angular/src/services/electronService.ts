@@ -18,7 +18,7 @@ export class ElectronService {
     }
 
     setDebug(debug: string): Promise<string> | void {
-        console.log("Service setDebug log"); //TODO cleanup
+        console.log("Service setDebug log: " + debug); //TODO cleanup
         return this.api?.system.setDebug(debug);
     }
 }

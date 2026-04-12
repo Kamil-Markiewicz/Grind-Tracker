@@ -1,0 +1,7 @@
+{
+    "extends": "build/electron-builder.base.json",
+    "linux": {
+        "category": "Utility"
+    },
+    "icon": "res/icons/in-dev.png"
+}

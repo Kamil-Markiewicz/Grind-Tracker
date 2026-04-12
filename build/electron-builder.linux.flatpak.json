@@ -1,0 +1,20 @@
+{
+    "extends": "build/electron-builder.linux.json",
+    "appId": "io.github.Kamil-Markiewicz.Grind-Tracker",
+    "artifactName": "grind-tracker-${version}-${arch}.flatpak",
+    "linux": {
+        "target": "flatpak"
+    },
+    "flatpak": {
+        "runtimeVersion": "24.08",
+        "baseVersion": "24.08",
+        "finishArgs": [
+            "--socket=wayland",
+            "--socket=x11",
+            "--share=network",
+            "--share=ipc",
+            "--filesystem=home",
+            "--device=dri"
+        ]
+    }
+}

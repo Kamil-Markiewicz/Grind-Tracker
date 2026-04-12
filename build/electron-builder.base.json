@@ -1,0 +1,13 @@
+{
+    "appId": "Kamil-Markiewicz.Grind_Tracker",
+    "productName": "Grind Tracker",
+    "directories": {
+        "output": "out"
+    },
+    "files": [
+        "dist/electron/**/*",
+        "dist/Grind-Tracker/**/*"
+    ],
+    "icon": "res/icons/favicon.ico",
+    "publish": null
+}

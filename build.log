@@ -1,0 +1,65 @@
+  • electron-builder  version=26.8.1 os=6.19.10-1-cachyos
+  • loaded configuration  file=/home/user/Git/Grind-Tracker/build/electron-builder.linux.flatpak.json
+  • loaded parent configuration  file=/home/user/Git/Grind-Tracker/build/electron-builder.linux.json
+  • loaded parent configuration  file=/home/user/Git/Grind-Tracker/build/electron-builder.base.json
+  • effective config  config=directories:
+  output: out
+  buildResources: build
+appId: Kamil-Markiewicz.Grind_Tracker
+productName: Grind Tracker
+files:
+  - filter:
+      - dist/electron/**/*
+      - dist/Grind-Tracker/**/*
+extends: build/electron-builder.linux.json
+linux:
+  category: Utility
+  target: flatpak
+icon: res/icons/in-dev.png
+
+  • no event listeners found  event=beforePack
+  • spawning        command=npm prefix -w cwd=/home/user/Git/Grind-Tracker
+  • exited          command=npm code=1 pid=3799
+  • executing @electron/rebuild  electronVersion=40.8.0 arch=x64 buildFromSource=false workspaceRoot=/home/user/Git/Grind-Tracker projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=linux arch=x64 electron=40.8.0 appOutDir=out/linux-unpacked
+  • no custom electronDist provided, unpacking default Electron distribution
+  • spawning        command=/home/user/Git/Grind-Tracker/node_modules/app-builder-bin/linux/x64/app-builder unpack-electron --configuration [{"platform":"linux","arch":"x64","version":"40.8.0"}] --output /home/user/Git/Grind-Tracker/out/linux-unpacked --distMacOsAppName Electron.app
+  • map async       taskCount=2
+  • map async       taskCount=1
+  • map async       taskCount=74
+  • exited          command=app-builder code=0 pid=3829
+  • no event listeners found  event=afterExtract
+  • searching for node modules  pm=npm searchDir=/home/user/Git/Grind-Tracker
+(node:3772) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  • node modules collection complete  packageName=grind-tracker depCount=12
+  • collected node modules  pm=npm nodeModules=[{"name":"@angular/common","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/common"},{"name":"@angular/compiler","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/compiler"},{"name":"@angular/core","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/core"},{"name":"@angular/forms","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/forms"},{"name":"@angular/platform-browser","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/platform-browser"},{"name":"@angular/router","version":"21.2.2","dir":"/home/user/Git/Grind-Tracker/node_modules/@angular/router"},{"name":"@standard-schema/spec","version":"1.1.0","dir":"/home/user/Git/Grind-Tracker/node_modules/@standard-schema/spec"},{"name":"debug","version":"2.6.9","dir":"/home/user/Git/Grind-Tracker/node_modules/electron-squirrel-startup/node_modules/debug"},{"name":"electron-squirrel-startup","version":"1.0.1","dir":"/home/user/Git/Grind-Tracker/node_modules/electron-squirrel-startup"},{"name":"ms","version":"2.0.0","dir":"/home/user/Git/Grind-Tracker/node_modules/electron-squirrel-startup/node_modules/ms"},{"name":"rxjs","version":"7.8.2","dir":"/home/user/Git/Grind-Tracker/node_modules/rxjs"},{"name":"tslib","version":"2.8.1","dir":"/home/user/Git/Grind-Tracker/node_modules/tslib"}]
+  • duplicate dependency references  dependencies=["@angular/core@21.2.2","rxjs@7.8.2","@angular/compiler@21.2.2","rxjs@7.8.2","@angular/common@21.2.2","@angular/core@21.2.2","@angular/platform-browser@21.2.2","rxjs@7.8.2","@angular/common@21.2.2","@angular/core@21.2.2","@angular/common@21.2.2","@angular/core@21.2.2","@angular/platform-browser@21.2.2","rxjs@7.8.2"]
+  • identified module  dep=@angular/common from=node_modules/@angular/common to=out/linux-unpacked/resources/app/node_modules/@angular/common filesCount=3734
+  • identified module  dep=@angular/compiler from=node_modules/@angular/compiler to=out/linux-unpacked/resources/app/node_modules/@angular/compiler filesCount=4
+  • identified module  dep=@angular/core from=node_modules/@angular/core to=out/linux-unpacked/resources/app/node_modules/@angular/core filesCount=81
+  • identified module  dep=@angular/forms from=node_modules/@angular/forms to=out/linux-unpacked/resources/app/node_modules/@angular/forms filesCount=11
+  • identified module  dep=@angular/platform-browser from=node_modules/@angular/platform-browser to=out/linux-unpacked/resources/app/node_modules/@angular/platform-browser filesCount=14
+  • identified module  dep=@angular/router from=node_modules/@angular/router to=out/linux-unpacked/resources/app/node_modules/@angular/router filesCount=12
+  • identified module  dep=@standard-schema/spec from=node_modules/@standard-schema/spec to=out/linux-unpacked/resources/app/node_modules/@standard-schema/spec filesCount=5
+  • identified module  dep=debug from=node_modules/electron-squirrel-startup/node_modules/debug to=out/linux-unpacked/resources/app/node_modules/debug filesCount=10
+  • identified module  dep=electron-squirrel-startup from=node_modules/electron-squirrel-startup to=out/linux-unpacked/resources/app/node_modules/electron-squirrel-startup filesCount=4
+  • identified module  dep=ms from=node_modules/electron-squirrel-startup/node_modules/ms to=out/linux-unpacked/resources/app/node_modules/ms filesCount=3
+  • identified module  dep=rxjs from=node_modules/rxjs to=out/linux-unpacked/resources/app/node_modules/rxjs filesCount=2025
+  • identified module  dep=tslib from=node_modules/tslib to=out/linux-unpacked/resources/app/node_modules/tslib filesCount=11
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+  • building        target=flatpak arch=x64 file=out/Grind Tracker-0.1.2-x86_64.flatpak
+  • no event listeners found  event=artifactBuildStarted
+  • spawning        command=/home/user/Git/Grind-Tracker/node_modules/app-builder-bin/linux/x64/app-builder icon --format set --root /home/user/Git/Grind-Tracker/build --root /home/user/Git/Grind-Tracker --out /home/user/Git/Grind-Tracker/out/.icon-set --input res/icons/in-dev.png --fallback-input /home/user/Git/Grind-Tracker/node_modules/app-builder-lib/templates/icons/electron-linux
+  • path doesn't exist  path=/home/user/Git/Grind-Tracker/build/res/icons/in-dev.png
+  • path resolved   path=/home/user/Git/Grind-Tracker/res/icons/in-dev.png outputFormat=set
+  • exited          command=app-builder code=0 pid=3931 out={"icons":[{"file":"/home/user/Git/Grind-Tracker/res/icons/in-dev.png","size":360}],"isFallback":false}
+  • async task error  error=flatpak failed with status code 1
+  ⨯ flatpak failed with status code 1  failedTask=build stackTrace=Error: flatpak failed with status code 1
+    at ChildProcess.<anonymous> (/home/user/Git/Grind-Tracker/node_modules/@malept/flatpak-bundler/index.js:71:16)
+    at ChildProcess.emit (node:events:509:20)
+    at maybeClose (node:internal/child_process:1108:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:305:5)

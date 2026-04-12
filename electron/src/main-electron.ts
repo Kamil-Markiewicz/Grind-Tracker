@@ -9,16 +9,6 @@ const indexRelPath: string = "/dist/Grind-Tracker/browser/index.html";
 
 function createWindow(): BrowserWindow {
     debugDisplay();
-    // const win = new BrowserWindow({
-    //     width: 800,
-    //     height: 600,
-    //     webPreferences: {
-    //         preload: path.join(__dirname, 'src/backend/preload.js')
-    //     }
-    // })
-
-    // win.loadFile(indexRelPath)
-
     const size = screen.getPrimaryDisplay().workAreaSize;
 
     mainWindow = new BrowserWindow({
@@ -29,7 +19,7 @@ function createWindow(): BrowserWindow {
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js'),
+            //preload: path.join(__dirname, 'preload.js'), //TODO cleanup
         }
     })
 
@@ -77,7 +67,7 @@ function handleSetDebug(event: any, debug: string) {
 app.whenReady().then(() => {
     ipcMain.handle('ping', () => 'pong')
     ipcMain.handle('dialog:openFile', handleFileOpen)
-    ipcMain.handle('set-debug', handleSetDebug)
+    //ipcMain.handle('set-debug', handleSetDebug)
     createWindow()
 
     app.on('activate', () => {

@@ -3,10 +3,6 @@ import * as system from './preloads/system';
 
 contextBridge.exposeInMainWorld('electronAPI', {
     system,
-    //   system: {
-    //     restartApp: () => ipcRenderer.invoke('system:restartApp'),
-    //     setDebug: (debug: string) => ipcRenderer.invoke('system:setDebug', debug),
-    //   }
 });
 
 contextBridge.exposeInMainWorld('versions', {

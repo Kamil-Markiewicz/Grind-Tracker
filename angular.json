@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/Grind-Tracker",
             "index": "angular/src/index.html",
             "browser": "./angular/src/main-ang.ts",
             "tsConfig": "./angular/tsconfig.angular.json",

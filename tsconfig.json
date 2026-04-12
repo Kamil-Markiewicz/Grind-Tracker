@@ -16,7 +16,7 @@
         "module": "preserve",
         "declaration": true,
         "composite": true,
-        "emitDeclarationOnly": false, //TO-DO Look into why true is not supported
+        "emitDeclarationOnly": false,
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
