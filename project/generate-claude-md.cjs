@@ -8,6 +8,9 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const srcDir = PROJECT_ROOT;
 const outputFile = path.join(PROJECT_ROOT, 'project/claude.md');
 
+const configPath = path.join(PROJECT_ROOT, 'project/claude.config.js');
+const { includeContentOfFiles } = require(configPath);
+
 // Configuration
 const ignoreDirs = new Set([
     'node_modules',
@@ -36,26 +39,6 @@ const ignoreFiles = new Set([
     '.env',
     '.env.local',
 ]);
-
-// Add any files you want included here
-const includeContentOfFiles = [
-    'tsconfig.json',
-    'package.json',
-
-    'build/electron-builder.base.json',
-    'build/electron-builder.linux.json',
-    
-    // 'angular/src/app/api/electronAPI.ts',
-    // 'angular/src/app/api/interfaces/IElectronSystemAPI.ts',
-    // 'angular/src/app/components/index/index.html',
-    // 'angular/src/app/components/index/index.ts'
-
-        // 'electron/src/preloads/system.ts',
-    // 'electron/src/main-electron.ts',
-    // 'electron/src/preload.ts',
-    // 'electron/src/renderer.ts',
-    // 'electron/src/system.ts',
-];
 
 function shouldIgnore(name) {
     return ignoreDirs.has(name) || ignoreFiles.has(name);
