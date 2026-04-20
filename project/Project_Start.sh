@@ -22,3 +22,6 @@ sudo pacman -S flatpak flatpak-builder
 flatpak install flathub org.freedesktop.Platform//24.08
 flatpak install flathub org.freedesktop.Sdk//24.08
 flatpak install flathub org.electronjs.Electron2.BaseApp//24.08
+
+#Install Bootstrap
+npm install bootstrap
