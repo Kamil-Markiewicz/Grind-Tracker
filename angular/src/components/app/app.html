@@ -213,6 +213,8 @@ Debug: <input [(ngModel)]="debugStatus" placeholder="Debug title" />
 <button>Open a File</button>
 File path: <strong id="filePath"></strong>
 
+<button (click)="onToggleTheme()">Toggle Theme</button>
+
 <app-home></app-home>
 <router-outlet />
 

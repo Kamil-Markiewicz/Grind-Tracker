@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { ElectronService } from '../../services/electronService';
-import { LoggerService } from '../../services/loggerService';
+import { ElectronService } from '../../services/ElectronService';
+import { LoggerService } from '../../services/LoggerService';
 import {Home} from '../home/home'
+import { ThemeService } from '../../services/ThemeService';
 
 @Component({
     selector: 'app-root',
@@ -15,6 +16,7 @@ export class App {
     protected readonly title = signal('Grind-Tracker');
     private electronService = inject(ElectronService);
     private loggerService = inject(LoggerService);
+    private themeService = inject(ThemeService);
 
     protected debugStatus = '';
     private resultTest = '';
@@ -24,5 +26,10 @@ export class App {
         this.loggerService.logDebug('OnSetDebug entry');
         const res = await this.electronService.setDebug(this.debugStatus);
         if (res) this.resultTest = res;
+    }
+
+    async onToggleTheme() {
+        console.log('onToggleTheme fired');//TODO Cleanup
+        this.themeService.toggle();
     }
 }

@@ -24,6 +24,7 @@ const ignoreDirs = new Set([
     'coverage',
     '.env',
     '.env.local',
+    '.flatpak-builder',
     '__pycache__',
     'out',
     'venv',

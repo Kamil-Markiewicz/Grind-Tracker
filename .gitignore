@@ -59,3 +59,6 @@ Thumbs.db
 
 #AI Slop
 /project/claude.md
+
+#Build
+.flatpak-builder/
