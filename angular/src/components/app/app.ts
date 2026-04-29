@@ -5,6 +5,7 @@ import { ElectronService } from '../../services/ElectronService';
 import { LoggerService } from '../../services/LoggerService';
 import {Home} from '../home/home'
 import { ThemeService } from '../../services/ThemeService';
+import { Themes } from '../../../../shared/types/themes';
 
 @Component({
     selector: 'app-root',
@@ -21,6 +22,8 @@ export class App {
     protected debugStatus = '';
     private resultTest = '';
 
+    readonly themes = Object.values(Themes) as Themes[];
+
     async onSetDebug() {
         console.log('onSetDebug fired');//TODO Cleanup
         this.loggerService.logDebug('OnSetDebug entry');
@@ -28,8 +31,7 @@ export class App {
         if (res) this.resultTest = res;
     }
 
-    async onToggleTheme() {
-        console.log('onToggleTheme fired');//TODO Cleanup
-        this.themeService.toggle();
+    async onThemeChange(theme: Themes) {
+        this.themeService.switchTheme(theme);
     }
 }
