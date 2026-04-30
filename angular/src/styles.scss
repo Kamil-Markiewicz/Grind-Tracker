@@ -1,1 +1,35 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Base variables (light default)
+:root {
+    --bg-color: #fff;
+    --text-color: #000;
+    --accent-color: #0d6efd;
+    --h1-color: #000;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #1c1d22;
+    --accent-color: #6ea8fe;
+    --bs-body-color: #fff;
+    --h1-color: #fff;
+}
+
+[data-bs-theme="oled"] {
+    --bs-body-bg: #000;
+    --text-color: #657b83;
+    --accent-color: #268bd2;
+    --bs-body-color: #ddd;
+    --h1-color: #ddd;
+}
+
+[data-bs-theme="nord"] {
+    --bg-color: #2e3440;
+    --bs-body-bg: #2e3440;
+    --text-color: #d8dee9;
+    --accent-color: #88c0d0;
+}
+
+h1 {
+  color: var(--h1-color);
+}
