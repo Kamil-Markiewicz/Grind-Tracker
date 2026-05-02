@@ -6,11 +6,19 @@ import { LoggerService } from '../../services/LoggerService';
 
 @Component({
     selector: 'app-home',
-    imports: [],
+    imports: [FormsModule],
     templateUrl: './home.html',
     styleUrl: './home.scss',
 })
 export class Home {
-    //private electronService = inject(ElectronService);
+    private electronService = inject(ElectronService);
     private loggerService = inject(LoggerService);
+
+    protected debugStatus = '';
+
+    async onSetDebug() {
+        console.log('onSetDebug fired');//TODO Cleanup
+        this.loggerService.logDebug('OnSetDebug entry');
+        const res = await this.electronService.setDebug(this.debugStatus);
+    }
 }

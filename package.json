@@ -1,6 +1,6 @@
 {
     "name": "grind-tracker",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Cross-platform grind tracking app.",
     "keywords": [
         "electron",

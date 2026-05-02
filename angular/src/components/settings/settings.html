@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        @for (theme of themes; track theme) {
+        <button class="col-sm-6" type="button" (click)="onThemeChange(theme)">
+            {{ theme }}
+        </button>
+        } @empty {
+        <li>There are no themes.</li>
+        }
+    </div>
+</div>
