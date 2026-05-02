@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        @for (card of themeCards; track card) {
+            <selectable-card class="col-sm-6" [title]="card.title"
+                [value]="card.value" (cardSelected)="onThemeSelected($event)" />
+        
+        } @empty {
+        <li>There are no themes.</li>
+        }
+    </div>
+</div>
