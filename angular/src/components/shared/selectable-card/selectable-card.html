@@ -1,0 +1,21 @@
+ <button
+  type="button"
+  class="selectable-card"
+  (click)="onClick()"
+  [attr.aria-label]="title ?? 'Selectable card'"
+>
+  @if (imagePath) {
+    <img class="selectable-card__image" [src]="imagePath" [alt]="title ?? ''" />
+  }
+
+  @if (title || description) {
+    <div class="selectable-card__body">
+      @if (title) {
+        <span class="selectable-card__title">{{ title }}</span>
+      }
+      @if (description) {
+        <span class="selectable-card__description">{{ description }}</span>
+      }
+    </div>
+  }
+</button>

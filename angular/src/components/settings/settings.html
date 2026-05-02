@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        @for (theme of themes; track theme) {
-        <button class="col-sm-6" type="button" (click)="onThemeChange(theme)">
-            {{ theme }}
-        </button>
+        @for (card of themeCards; track card) {
+            <selectable-card class="col-sm-6" [title]="card.title"
+                [value]="card.value" (cardSelected)="onThemeSelected($event)" />
+        
         } @empty {
         <li>There are no themes.</li>
         }
